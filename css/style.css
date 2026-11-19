@@ -1,0 +1,434 @@
+:root{--grey:#626262;--beige:#F2F0EC;--char:#303030;--light:#E8E8E8;--bs-body-font-family:Montserrat,system-ui,sans-serif;--bs-body-color:#303030}
+body{font-family:Montserrat,system-ui,sans-serif;line-height:1.7}
+h1,h2,h3,.h2,.brand-name,.lead-serif{font-family:'Playfair Display',Georgia,serif;font-weight:400}
+h2,.h2{font-size:clamp(1.8rem,4vw,2.6rem)}
+p{max-width:62ch}
+.py-section{padding:96px 0}
+.bg-beige{background:var(--beige)}
+.btn-brand{background:var(--char);color:#fff;border-radius:0;font-weight:600;padding:12px 28px}
+.btn-brand:hover,.btn-brand:focus{background:#000;color:#fff}
+.btn-outline-dark,.btn-light{border-radius:0;padding:12px 28px;font-weight:600}
+.navbar-brand{color:var(--char)}
+.nav-link{font-weight:500;color:var(--char)}
+:focus-visible{outline:2px solid var(--grey);outline-offset:3px}
+
+/* Images: put real photos in /images with these names. Gradient shows until then. */
+.ph{background:var(--img,none) center/cover no-repeat,linear-gradient(140deg,#8b9496,#626262 60%,#3a3a3a)}
+.photo{display:flex;align-items:flex-end;width:100%;aspect-ratio:4/3;padding:16px;color:#fff;font-size:.8rem;border:0;text-align:left}
+.photo.tall{aspect-ratio:3/4}.photo.sq{aspect-ratio:1/1;cursor:pointer}
+
+
+
+
+/* Resort images - Bootstrap responsive image support */
+
+.resort-photo {
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px;
+}
+
+/* Mobile image optimization */
+@media (max-width: 767.98px) {
+    .resort-photo {
+        height: 280px;
+        margin-top: 20px;
+    }
+}
+/* =====================================
+HERO IMAGE - CHARCOAL OVERLAY
+===================================== */
+
+.hero {
+position: relative;
+isolation: isolate;
+display: flex;
+align-items: flex-end;
+min-height: 88vh;
+padding: 120px 0 64px;
+color: #fff;
+overflow: hidden;
+background-color: #303030;
+}
+
+/* Hero Background Image */
+
+.hero-image {
+position: absolute;
+inset: 0;
+z-index: -2;
+width: 100%;
+height: 100%;
+object-fit: cover;
+object-position: center center;
+}
+
+/* Charcoal Overlay */
+
+.hero::before {
+content: "";
+position: absolute;
+inset: 0;
+z-index: -1;
+
+background: linear-gradient(
+180deg,
+rgba(48, 48, 48, 0.35) 0%,
+rgba(48, 48, 48, 0.60) 50%,
+rgba(48, 48, 48, 0.88) 100%
+);
+}
+
+/* Hero Content */
+
+.hero-content {
+position: relative;
+z-index: 1;
+}
+
+
+/* Hero Content */
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Main Heading */
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.6rem, 8vw, 5.6rem);
+    font-weight: 400;
+    margin: 0 0 0.2em;
+}
+
+/* Subtitle */
+
+.hero .lead-serif {
+    font-size: clamp(1.15rem, 2.4vw, 1.6rem);
+}
+
+/* Description */
+
+.hero-text {
+    max-width: 60ch;
+}
+
+/* Search Bar */
+
+.search-bar {
+    background: #fff;
+    color: var(--char);
+    max-width: 980px;
+    margin-top: 32px;
+    position: relative;
+    z-index: 5;
+}
+
+.search-bar .field {
+    padding: 12px 18px;
+    border-right: 1px solid var(--light);
+    border-bottom: 1px solid var(--light);
+}
+
+.search-bar label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--grey);
+}
+
+.search-bar input {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    font: 500 1rem Montserrat, sans-serif;
+    padding: 2px 0;
+}
+
+.msg {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    min-height: 1.4em;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 767.98px) {
+
+    .hero {
+        min-height: 750px;
+        padding: 100px 0 40px;
+    }
+
+    .hero-image {
+        object-position: center center;
+    }
+
+    .search-bar .field {
+        border-right: 0;
+    }
+
+}
+
+/* Escape Views Resort - Room Gallery */
+
+.room-gallery {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+    background: var(--light);
+}
+
+.room-gallery .carousel-item img {
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.room-gallery .carousel-indicators {
+    margin-bottom: 14px;
+}
+
+.room-gallery .carousel-indicators button {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    border: 0;
+}
+
+.room-gallery .carousel-control-prev,
+.room-gallery .carousel-control-next {
+    width: 12%;
+}
+
+@media (max-width: 767.98px) {
+    .room-gallery .carousel-item img {
+        height: 280px;
+    }
+}
+
+/* Escape Views Resort - Restaurant Gallery */
+
+.restaurant-gallery {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+    background: var(--light);
+}
+
+.restaurant-gallery .carousel-item img {
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.restaurant-gallery .carousel-indicators {
+    margin-bottom: 14px;
+}
+
+.restaurant-gallery .carousel-indicators button {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    border: 0;
+}
+
+.restaurant-gallery .carousel-control-prev,
+.restaurant-gallery .carousel-control-next {
+    width: 12%;
+}
+
+@media (max-width: 767.98px) {
+    .restaurant-gallery .carousel-item img {
+        height: 280px;
+    }
+}
+
+/* Experiences section images */
+
+.experience-photo {
+    display: block;
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px;
+    background: var(--light);
+    transition: transform 0.3s ease;
+}
+
+.experience-photo:hover {
+    transform: translateY(-4px);
+}
+
+@media (max-width: 767.98px) {
+    .experience-photo {
+        height: 240px;
+    }
+}
+
+
+/* =====================================
+   ESCAPE VIEWS - PHOTO GALLERY
+===================================== */
+
+#gallery-grid .photo {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    padding: 0;
+    border: none;
+    border-radius: 4px;
+    background: #626262;
+    cursor: pointer;
+    text-align: left;
+}
+
+/* Gallery image */
+
+#gallery-grid .photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+/* Image hover effect */
+
+#gallery-grid .photo:hover img {
+    transform: scale(1.06);
+}
+
+/* Image title overlay */
+
+#gallery-grid .photo span {
+    position: absolute;
+    inset: auto 0 0;
+    z-index: 2;
+    padding: 35px 16px 16px;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: linear-gradient(
+        transparent,
+        rgba(0,0,0,0.75)
+    );
+}
+
+/* Mobile responsive */
+
+@media (max-width: 767.98px) {
+    #gallery-grid .photo {
+        aspect-ratio: 1 / 1;
+    }
+
+    #gallery-grid .photo span {
+        font-size: 0.75rem;
+        padding: 25px 10px 10px;
+    }
+}
+
+/* =====================================
+   ESCAPE VIEWS - GOOGLE MAP LOCATION
+===================================== */
+
+.map-box {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    padding: 0;
+    overflow: hidden;
+    display: block;
+    background: #E8E8E8;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.map-box iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Mobile responsive map */
+
+@media (max-width: 767.98px) {
+    .map-box {
+        height: 320px;
+        margin-top: 10px;
+    }
+}
+
+.hero{min-height:88vh;display:flex;align-items:flex-end;color:#fff;padding:120px 0 64px;position:relative}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.65))}
+.hero .container{position:relative}
+
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.65))}
+.hero{background-position:center top;}   /* or: center bottom */
+
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,8vw,5.6rem);margin:0 0 .2em}
+.lead-serif{font-size:clamp(1.15rem,2.4vw,1.6rem)}
+.hero-text{max-width:60ch}
+
+.search-bar{background:#fff;color:var(--char);max-width:980px;margin-top:32px;position:relative;z-index:5}
+.search-bar .field{padding:12px 18px;border-right:1px solid var(--light);border-bottom:1px solid var(--light)}
+.search-bar label{display:block;font-size:.75rem;color:var(--grey)}
+.search-bar input{width:100%;border:0;background:transparent;font:500 1rem Montserrat;padding:2px 0}
+.msg{margin-top:12px;font-size:.9rem;min-height:1.4em}
+
+/* Guest picker */
+.guest-picker{position:relative;height:100%}
+.gp-toggle{width:100%;height:100%;min-height:64px;text-align:left;background:transparent;border:0;padding:12px 18px;display:block;color:var(--char)}
+.gp-toggle small{display:block;font-size:.75rem;color:var(--grey)}
+.gp-toggle strong{font-weight:600;font-size:1rem}
+.gp-panel{display:none;position:absolute;left:0;top:calc(100% + 8px);width:360px;max-width:calc(100vw - 32px);max-height:70vh;overflow-y:auto;background:#fff;color:var(--char);box-shadow:0 12px 40px rgba(0,0,0,.25);padding:20px;z-index:30}
+.gp-panel.open{display:block}
+.gp-panel h3{font:600 1.15rem Montserrat;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--light)}
+.gp-room-head{display:flex;justify-content:space-between;align-items:center;font:600 .8rem Montserrat;margin:16px 0 8px}
+.gp-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:8px}
+.gp-row > div > span{display:block;font-size:.8rem;margin-bottom:4px}
+.stepper{display:flex;align-items:center;justify-content:space-between;border:1px solid var(--grey);padding:6px 8px}
+.stepper button{width:30px;height:30px;border:0;border-radius:50%;background:var(--char);color:#fff;font-size:1.2rem;line-height:1}
+.stepper button:disabled{background:var(--light);color:#999;cursor:not-allowed}
+.stepper output{font-weight:500}
+.gp-age{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:.8rem;margin:8px 0}
+.gp-age select{padding:10px;border:1px solid var(--grey);background:#fff;min-width:140px}
+.gp-del{border:0;background:none;color:var(--char);font-size:.8rem;text-decoration:underline}
+.gp-foot{display:flex;gap:12px;border-top:1px solid var(--light);margin-top:16px;padding-top:16px}
+.gp-foot button{flex:1;border:0;padding:12px;font-weight:600}
+.gp-add{background:var(--light);color:var(--char)}
+.gp-done{background:var(--char);color:#fff}
+.gp-err{color:#b00020;font-size:.8rem;min-height:1.2em;margin-top:8px}
+
+.feature{border:1px solid var(--light);padding:28px;height:100%}
+.feature p{color:var(--grey);margin:0;font-size:.95rem}
+.facts{list-style:none;padding:0;margin:24px 0 32px;border-top:1px solid #ddd}
+.facts li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #ddd;font-size:.95rem}
+.facts span{color:var(--grey)}
+.map-box{aspect-ratio:4/3;background:var(--light);display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
+.site-footer{background:var(--char);color:#fff;padding:64px 0 32px}
+.site-footer a,.site-footer p{color:#e8e8e8;font-size:.92rem}
+.site-footer .btn-light{color:var(--char)}
+.copy{border-top:1px solid #555;margin-top:48px;padding-top:24px;font-size:.82rem;color:#c9c9c9}
+
+@media (max-width:767.98px){
+ .py-section{padding:64px 0}
+ .search-bar .field{border-right:0}
+ .gp-panel{position:fixed;left:16px;right:16px;top:auto;bottom:16px;width:auto;max-width:none;max-height:80vh}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
